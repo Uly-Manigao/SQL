@@ -5,7 +5,7 @@
 -- Dumped from database version 15.2
 -- Dumped by pg_dump version 15.2
 
--- Started on 2023-05-09 12:29:53
+-- Started on 2023-05-12 17:02:46
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,6 +17,24 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 214 (class 1259 OID 16406)
+-- Name: FILM; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."FILM" (
+    film_id integer NOT NULL,
+    poster_title text NOT NULL,
+    description text NOT NULL
+);
+
+
+ALTER TABLE public."FILM" OWNER TO postgres;
 
 --
 -- TOC entry 3316 (class 0 OID 16406)
@@ -48,7 +66,16 @@ COPY public."FILM" (film_id, poster_title, description) FROM stdin;
 \.
 
 
--- Completed on 2023-05-09 12:29:53
+--
+-- TOC entry 3173 (class 2606 OID 16412)
+-- Name: FILM FILM_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."FILM"
+    ADD CONSTRAINT "FILM_pkey" PRIMARY KEY (film_id);
+
+
+-- Completed on 2023-05-12 17:02:46
 
 --
 -- PostgreSQL database dump complete
